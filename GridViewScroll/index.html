@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	GridViewScroll with jQuery
+</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="gridviewScroll.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link href="GridviewScroll.css" rel="stylesheet" />
+    <style type="text/css">
+    	TD
+		{
+		    font-family: 'Oxygen', sans-serif, Tahoma, Arial, Verdana;
+		    font-weight: normal;
+		    font-size: 12px;
+		    color: #333333;
+		}
+    </style>
+</head>
+<body>
+<div style="width:670px;margin-left:auto;margin-right:auto;">
+            <h2 style="text-align:center;">Freeze/Fixed GridView Header using GridViewScroll jQuery plugin</h2>
+            <p style="text-align:center;">Demo by Priya Darshini - Tutorial @ <a href="javascript:parent.window.location.href='http://www.programming-free.com/2013/03/freeze-gridview-header-using-jquery.html'">Programmingfree</a></p>  
+	<table cellspacing="0" rules="all" border="1" id="GridView1" style="width:660px;border-collapse:collapse;">
+			<tr class="GridviewScrollHeader">
+				<th scope="col">Code</th><th scope="col" style="width:150px;">Name</th><th scope="col">Continent</th><th scope="col">Surface Area</th><th scope="col">Population</th><th scope="col">Year of Independence</th><th scope="col">Local Name</th><th scope="col">Capital</th><th scope="col">Head of State</th><th scope="col">Surface Area</th>
+			</tr><tr class="GridviewScrollItem">
+				<td>ABW</td><td class="Wrap" style="width:150px;">Aruba</td><td>North America</td><td>Caribbean</td><td>103000</td><td>&nbsp;</td><td>Aruba</td><td>129</td><td>Beatrix</td><td>193</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>AFG</td><td class="Wrap" style="width:150px;">Afghanistan</td><td>Asia</td><td>Southern and Central Asia</td><td>22720000</td><td>1919</td><td>Afganistan/Afqanestan</td><td>1</td><td>Mohammad Omar</td><td>652090</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>AGO</td><td class="Wrap" style="width:150px;">Angola</td><td>Africa</td><td>Central Africa</td><td>12878000</td><td>1975</td><td>Angola</td><td>56</td><td>Jos&#233; Eduardo dos Santos</td><td>1246700</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>AIA</td><td class="Wrap" style="width:150px;">Anguilla</td><td>North America</td><td>Caribbean</td><td>8000</td><td>&nbsp;</td><td>Anguilla</td><td>62</td><td>Elisabeth II</td><td>96</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ALB</td><td class="Wrap" style="width:150px;">Albania</td><td>Europe</td><td>Southern Europe</td><td>3401200</td><td>1912</td><td>Shqip&#235;ria</td><td>34</td><td>Rexhep Mejdani</td><td>28748</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>AND</td><td class="Wrap" style="width:150px;">Andorra</td><td>Europe</td><td>Southern Europe</td><td>78000</td><td>1278</td><td>Andorra</td><td>55</td><td>&nbsp;</td><td>468</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ANT</td><td class="Wrap" style="width:150px;">Netherlands Antilles</td><td>North America</td><td>Caribbean</td><td>217000</td><td>&nbsp;</td><td>Nederlandse Antillen</td><td>33</td><td>Beatrix</td><td>800</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ARE</td><td class="Wrap" style="width:150px;">United Arab Emirates</td><td>Asia</td><td>Middle East</td><td>2441000</td><td>1971</td><td>Al-Imarat al-&#180;Arabiya al-Muttahida</td><td>65</td><td>Zayid bin Sultan al-Nahayan</td><td>83600</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ARG</td><td class="Wrap" style="width:150px;">Argentina</td><td>South America</td><td>South America</td><td>37032000</td><td>1816</td><td>Argentina</td><td>69</td><td>Fernando de la R&#250;a</td><td>2780400</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ARM</td><td class="Wrap" style="width:150px;">Armenia</td><td>Asia</td><td>Middle East</td><td>3520000</td><td>1991</td><td>Hajastan</td><td>126</td><td>Robert Kotšarjan</td><td>29800</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ASM</td><td class="Wrap" style="width:150px;">American Samoa</td><td>Oceania</td><td>Polynesia</td><td>68000</td><td>&nbsp;</td><td>Amerika Samoa</td><td>54</td><td>George W. Bush</td><td>199</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ATA</td><td class="Wrap" style="width:150px;">Antarctica</td><td>Antarctica</td><td>Antarctica</td><td>0</td><td>&nbsp;</td><td>–</td><td>&nbsp;</td><td>&nbsp;</td><td>1.312E+07</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ATF</td><td class="Wrap" style="width:150px;">French Southern territories</td><td>Antarctica</td><td>Antarctica</td><td>0</td><td>&nbsp;</td><td>Terres australes fran&#231;aises</td><td>&nbsp;</td><td>Jacques Chirac</td><td>7780</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ATG</td><td class="Wrap" style="width:150px;">Antigua and Barbuda</td><td>North America</td><td>Caribbean</td><td>68000</td><td>1981</td><td>Antigua and Barbuda</td><td>63</td><td>Elisabeth II</td><td>442</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>AUS</td><td class="Wrap" style="width:150px;">Australia</td><td>Oceania</td><td>Australia and New Zealand</td><td>18886000</td><td>1901</td><td>Australia</td><td>135</td><td>Elisabeth II</td><td>7741220</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>AUT</td><td class="Wrap" style="width:150px;">Austria</td><td>Europe</td><td>Western Europe</td><td>8091800</td><td>1918</td><td>&#214;sterreich</td><td>1523</td><td>Thomas Klestil</td><td>83859</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>AZE</td><td class="Wrap" style="width:150px;">Azerbaijan</td><td>Asia</td><td>Middle East</td><td>7734000</td><td>1991</td><td>Az&#228;rbaycan</td><td>144</td><td>Heyd&#228;r &#196;liyev</td><td>86600</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BDI</td><td class="Wrap" style="width:150px;">Burundi</td><td>Africa</td><td>Eastern Africa</td><td>6695000</td><td>1962</td><td>Burundi/Uburundi</td><td>552</td><td>Pierre Buyoya</td><td>27834</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BEL</td><td class="Wrap" style="width:150px;">Belgium</td><td>Europe</td><td>Western Europe</td><td>10239000</td><td>1830</td><td>Belgi&#235;/Belgique</td><td>179</td><td>Albert II</td><td>30518</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BEN</td><td class="Wrap" style="width:150px;">Benin</td><td>Africa</td><td>Western Africa</td><td>6097000</td><td>1960</td><td>B&#233;nin</td><td>187</td><td>Mathieu K&#233;r&#233;kou</td><td>112622</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BFA</td><td class="Wrap" style="width:150px;">Burkina Faso</td><td>Africa</td><td>Western Africa</td><td>11937000</td><td>1960</td><td>Burkina Faso</td><td>549</td><td>Blaise Compaor&#233;</td><td>274000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BGD</td><td class="Wrap" style="width:150px;">Bangladesh</td><td>Asia</td><td>Southern and Central Asia</td><td>129155000</td><td>1971</td><td>Bangladesh</td><td>150</td><td>Shahabuddin Ahmad</td><td>143998</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BGR</td><td class="Wrap" style="width:150px;">Bulgaria</td><td>Europe</td><td>Eastern Europe</td><td>8190900</td><td>1908</td><td>Balgarija</td><td>539</td><td>Petar Stojanov</td><td>110994</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BHR</td><td class="Wrap" style="width:150px;">Bahrain</td><td>Asia</td><td>Middle East</td><td>617000</td><td>1971</td><td>Al-Bahrayn</td><td>149</td><td>Hamad ibn Isa al-Khalifa</td><td>694</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BHS</td><td class="Wrap" style="width:150px;">Bahamas</td><td>North America</td><td>Caribbean</td><td>307000</td><td>1973</td><td>The Bahamas</td><td>148</td><td>Elisabeth II</td><td>13878</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BIH</td><td class="Wrap" style="width:150px;">Bosnia and Herzegovina</td><td>Europe</td><td>Southern Europe</td><td>3972000</td><td>1992</td><td>Bosna i Hercegovina</td><td>201</td><td>Ante Jelavic</td><td>51197</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BLR</td><td class="Wrap" style="width:150px;">Belarus</td><td>Europe</td><td>Eastern Europe</td><td>10236000</td><td>1991</td><td>Belarus</td><td>3520</td><td>Aljaksandr Lukašenka</td><td>207600</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BLZ</td><td class="Wrap" style="width:150px;">Belize</td><td>North America</td><td>Central America</td><td>241000</td><td>1981</td><td>Belize</td><td>185</td><td>Elisabeth II</td><td>22696</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BMU</td><td class="Wrap" style="width:150px;">Bermuda</td><td>North America</td><td>North America</td><td>65000</td><td>&nbsp;</td><td>Bermuda</td><td>191</td><td>Elisabeth II</td><td>53</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BOL</td><td class="Wrap" style="width:150px;">Bolivia</td><td>South America</td><td>South America</td><td>8329000</td><td>1825</td><td>Bolivia</td><td>194</td><td>Hugo B&#225;nzer Su&#225;rez</td><td>1098581</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BRA</td><td class="Wrap" style="width:150px;">Brazil</td><td>South America</td><td>South America</td><td>170115000</td><td>1822</td><td>Brasil</td><td>211</td><td>Fernando Henrique Cardoso</td><td>8547403</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BRB</td><td class="Wrap" style="width:150px;">Barbados</td><td>North America</td><td>Caribbean</td><td>270000</td><td>1966</td><td>Barbados</td><td>174</td><td>Elisabeth II</td><td>430</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BRN</td><td class="Wrap" style="width:150px;">Brunei</td><td>Asia</td><td>Southeast Asia</td><td>328000</td><td>1984</td><td>Brunei Darussalam</td><td>538</td><td>Haji Hassan al-Bolkiah</td><td>5765</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BTN</td><td class="Wrap" style="width:150px;">Bhutan</td><td>Asia</td><td>Southern and Central Asia</td><td>2124000</td><td>1910</td><td>Druk-Yul</td><td>192</td><td>Jigme Singye Wangchuk</td><td>47000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BVT</td><td class="Wrap" style="width:150px;">Bouvet Island</td><td>Antarctica</td><td>Antarctica</td><td>0</td><td>&nbsp;</td><td>Bouvet&#248;ya</td><td>&nbsp;</td><td>Harald V</td><td>59</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>BWA</td><td class="Wrap" style="width:150px;">Botswana</td><td>Africa</td><td>Southern Africa</td><td>1622000</td><td>1966</td><td>Botswana</td><td>204</td><td>Festus G. Mogae</td><td>581730</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CAF</td><td class="Wrap" style="width:150px;">Central African Republic</td><td>Africa</td><td>Central Africa</td><td>3615000</td><td>1960</td><td>Centrafrique/B&#234;-Afr&#238;ka</td><td>1889</td><td>Ange-F&#233;lix Patass&#233;</td><td>622984</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CAN</td><td class="Wrap" style="width:150px;">Canada</td><td>North America</td><td>North America</td><td>31147000</td><td>1867</td><td>Canada</td><td>1822</td><td>Elisabeth II</td><td>9970610</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CCK</td><td class="Wrap" style="width:150px;">Cocos (Keeling) Islands</td><td>Oceania</td><td>Australia and New Zealand</td><td>600</td><td>&nbsp;</td><td>Cocos (Keeling) Islands</td><td>2317</td><td>Elisabeth II</td><td>14</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CHE</td><td class="Wrap" style="width:150px;">Switzerland</td><td>Europe</td><td>Western Europe</td><td>7160400</td><td>1499</td><td>Schweiz/Suisse/Svizzera/Svizra</td><td>3248</td><td>Adolf Ogi</td><td>41284</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CHL</td><td class="Wrap" style="width:150px;">Chile</td><td>South America</td><td>South America</td><td>15211000</td><td>1810</td><td>Chile</td><td>554</td><td>Ricardo Lagos Escobar</td><td>756626</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CHN</td><td class="Wrap" style="width:150px;">China</td><td>Asia</td><td>Eastern Asia</td><td>1277558000</td><td>-1523</td><td>Zhongquo</td><td>1891</td><td>Jiang Zemin</td><td>9572900</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CIV</td><td class="Wrap" style="width:150px;">C&#244;te d’Ivoire</td><td>Africa</td><td>Western Africa</td><td>14786000</td><td>1960</td><td>C&#244;te d’Ivoire</td><td>2814</td><td>Laurent Gbagbo</td><td>322463</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CMR</td><td class="Wrap" style="width:150px;">Cameroon</td><td>Africa</td><td>Central Africa</td><td>15085000</td><td>1960</td><td>Cameroun/Cameroon</td><td>1804</td><td>Paul Biya</td><td>475442</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>COD</td><td class="Wrap" style="width:150px;">Congo, The Democratic Republic of the</td><td>Africa</td><td>Central Africa</td><td>51654000</td><td>1960</td><td>R&#233;publique D&#233;mocratique du Congo</td><td>2298</td><td>Joseph Kabila</td><td>2344858</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>COG</td><td class="Wrap" style="width:150px;">Congo</td><td>Africa</td><td>Central Africa</td><td>2943000</td><td>1960</td><td>Congo</td><td>2296</td><td>Denis Sassou-Nguesso</td><td>342000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>COK</td><td class="Wrap" style="width:150px;">Cook Islands</td><td>Oceania</td><td>Polynesia</td><td>20000</td><td>&nbsp;</td><td>The Cook Islands</td><td>583</td><td>Elisabeth II</td><td>236</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>COL</td><td class="Wrap" style="width:150px;">Colombia</td><td>South America</td><td>South America</td><td>42321000</td><td>1810</td><td>Colombia</td><td>2257</td><td>Andr&#233;s Pastrana Arango</td><td>1138914</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>COM</td><td class="Wrap" style="width:150px;">Comoros</td><td>Africa</td><td>Eastern Africa</td><td>578000</td><td>1975</td><td>Komori/Comores</td><td>2295</td><td>Azali Assoumani</td><td>1862</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CPV</td><td class="Wrap" style="width:150px;">Cape Verde</td><td>Africa</td><td>Western Africa</td><td>428000</td><td>1975</td><td>Cabo Verde</td><td>1859</td><td>Ant&#243;nio Mascarenhas Monteiro</td><td>4033</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CRI</td><td class="Wrap" style="width:150px;">Costa Rica</td><td>North America</td><td>Central America</td><td>4023000</td><td>1821</td><td>Costa Rica</td><td>584</td><td>Miguel &#193;ngel Rodr&#237;guez Echeverr&#237;a</td><td>51100</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CUB</td><td class="Wrap" style="width:150px;">Cuba</td><td>North America</td><td>Caribbean</td><td>11201000</td><td>1902</td><td>Cuba</td><td>2413</td><td>Fidel Castro Ruz</td><td>110861</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CXR</td><td class="Wrap" style="width:150px;">Christmas Island</td><td>Oceania</td><td>Australia and New Zealand</td><td>2500</td><td>&nbsp;</td><td>Christmas Island</td><td>1791</td><td>Elisabeth II</td><td>135</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CYM</td><td class="Wrap" style="width:150px;">Cayman Islands</td><td>North America</td><td>Caribbean</td><td>38000</td><td>&nbsp;</td><td>Cayman Islands</td><td>553</td><td>Elisabeth II</td><td>264</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CYP</td><td class="Wrap" style="width:150px;">Cyprus</td><td>Asia</td><td>Middle East</td><td>754700</td><td>1960</td><td>K&#253;pros/Kibris</td><td>2430</td><td>Glafkos Klerides</td><td>9251</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>CZE</td><td class="Wrap" style="width:150px;">Czech Republic</td><td>Europe</td><td>Eastern Europe</td><td>10278100</td><td>1993</td><td>&#184;esko</td><td>3339</td><td>V&#225;clav Havel</td><td>78866</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>DEU</td><td class="Wrap" style="width:150px;">Germany</td><td>Europe</td><td>Western Europe</td><td>82164700</td><td>1955</td><td>Deutschland</td><td>3068</td><td>Johannes Rau</td><td>357022</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>DJI</td><td class="Wrap" style="width:150px;">Djibouti</td><td>Africa</td><td>Eastern Africa</td><td>638000</td><td>1977</td><td>Djibouti/Jibuti</td><td>585</td><td>Ismail Omar Guelleh</td><td>23200</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>DMA</td><td class="Wrap" style="width:150px;">Dominica</td><td>North America</td><td>Caribbean</td><td>71000</td><td>1978</td><td>Dominica</td><td>586</td><td>Vernon Shaw</td><td>751</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>DNK</td><td class="Wrap" style="width:150px;">Denmark</td><td>Europe</td><td>Nordic Countries</td><td>5330000</td><td>800</td><td>Danmark</td><td>3315</td><td>Margrethe II</td><td>43094</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>DOM</td><td class="Wrap" style="width:150px;">Dominican Republic</td><td>North America</td><td>Caribbean</td><td>8495000</td><td>1844</td><td>Rep&#250;blica Dominicana</td><td>587</td><td>Hip&#243;lito Mej&#237;a Dom&#237;nguez</td><td>48511</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>DZA</td><td class="Wrap" style="width:150px;">Algeria</td><td>Africa</td><td>Northern Africa</td><td>31471000</td><td>1962</td><td>Al-Jaza’ir/Alg&#233;rie</td><td>35</td><td>Abdelaziz Bouteflika</td><td>2381741</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ECU</td><td class="Wrap" style="width:150px;">Ecuador</td><td>South America</td><td>South America</td><td>12646000</td><td>1822</td><td>Ecuador</td><td>594</td><td>Gustavo Noboa Bejarano</td><td>283561</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>EGY</td><td class="Wrap" style="width:150px;">Egypt</td><td>Africa</td><td>Northern Africa</td><td>68470000</td><td>1922</td><td>Misr</td><td>608</td><td>Hosni Mubarak</td><td>1001449</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ERI</td><td class="Wrap" style="width:150px;">Eritrea</td><td>Africa</td><td>Eastern Africa</td><td>3850000</td><td>1993</td><td>Ertra</td><td>652</td><td>Isayas Afewerki [Isaias Afwerki]</td><td>117600</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ESH</td><td class="Wrap" style="width:150px;">Western Sahara</td><td>Africa</td><td>Northern Africa</td><td>293000</td><td>&nbsp;</td><td>As-Sahrawiya</td><td>2453</td><td>Mohammed Abdel Aziz</td><td>266000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ESP</td><td class="Wrap" style="width:150px;">Spain</td><td>Europe</td><td>Southern Europe</td><td>39441700</td><td>1492</td><td>Espa&#241;a</td><td>653</td><td>Juan Carlos I</td><td>505992</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>EST</td><td class="Wrap" style="width:150px;">Estonia</td><td>Europe</td><td>Baltic Countries</td><td>1439200</td><td>1991</td><td>Eesti</td><td>3791</td><td>Lennart Meri</td><td>45227</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ETH</td><td class="Wrap" style="width:150px;">Ethiopia</td><td>Africa</td><td>Eastern Africa</td><td>62565000</td><td>-1000</td><td>YeItyop&#180;iya</td><td>756</td><td>Negasso Gidada</td><td>1104300</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>FIN</td><td class="Wrap" style="width:150px;">Finland</td><td>Europe</td><td>Nordic Countries</td><td>5171300</td><td>1917</td><td>Suomi</td><td>3236</td><td>Tarja Halonen</td><td>338145</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>FJI</td><td class="Wrap" style="width:150px;">Fiji Islands</td><td>Oceania</td><td>Melanesia</td><td>817000</td><td>1970</td><td>Fiji Islands</td><td>764</td><td>Josefa Iloilo</td><td>18274</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>FLK</td><td class="Wrap" style="width:150px;">Falkland Islands</td><td>South America</td><td>South America</td><td>2000</td><td>&nbsp;</td><td>Falkland Islands</td><td>763</td><td>Elisabeth II</td><td>12173</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>FRA</td><td class="Wrap" style="width:150px;">France</td><td>Europe</td><td>Western Europe</td><td>59225700</td><td>843</td><td>France</td><td>2974</td><td>Jacques Chirac</td><td>551500</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>FRO</td><td class="Wrap" style="width:150px;">Faroe Islands</td><td>Europe</td><td>Nordic Countries</td><td>43000</td><td>&nbsp;</td><td>F&#248;royar</td><td>901</td><td>Margrethe II</td><td>1399</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>FSM</td><td class="Wrap" style="width:150px;">Micronesia, Federated States of</td><td>Oceania</td><td>Micronesia</td><td>119000</td><td>1990</td><td>Micronesia</td><td>2689</td><td>Leo A. Falcam</td><td>702</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GAB</td><td class="Wrap" style="width:150px;">Gabon</td><td>Africa</td><td>Central Africa</td><td>1226000</td><td>1960</td><td>Le Gabon</td><td>902</td><td>Omar Bongo</td><td>267668</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GBR</td><td class="Wrap" style="width:150px;">United Kingdom</td><td>Europe</td><td>British Islands</td><td>59623400</td><td>1066</td><td>United Kingdom</td><td>456</td><td>Elisabeth II</td><td>242900</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GEO</td><td class="Wrap" style="width:150px;">Georgia</td><td>Asia</td><td>Middle East</td><td>4968000</td><td>1991</td><td>Sakartvelo</td><td>905</td><td>Eduard Ševardnadze</td><td>69700</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GHA</td><td class="Wrap" style="width:150px;">Ghana</td><td>Africa</td><td>Western Africa</td><td>20212000</td><td>1957</td><td>Ghana</td><td>910</td><td>John Kufuor</td><td>238533</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GIB</td><td class="Wrap" style="width:150px;">Gibraltar</td><td>Europe</td><td>Southern Europe</td><td>25000</td><td>&nbsp;</td><td>Gibraltar</td><td>915</td><td>Elisabeth II</td><td>6</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GIN</td><td class="Wrap" style="width:150px;">Guinea</td><td>Africa</td><td>Western Africa</td><td>7430000</td><td>1958</td><td>Guin&#233;e</td><td>926</td><td>Lansana Cont&#233;</td><td>245857</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GLP</td><td class="Wrap" style="width:150px;">Guadeloupe</td><td>North America</td><td>Caribbean</td><td>456000</td><td>&nbsp;</td><td>Guadeloupe</td><td>919</td><td>Jacques Chirac</td><td>1705</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GMB</td><td class="Wrap" style="width:150px;">Gambia</td><td>Africa</td><td>Western Africa</td><td>1305000</td><td>1965</td><td>The Gambia</td><td>904</td><td>Yahya Jammeh</td><td>11295</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GNB</td><td class="Wrap" style="width:150px;">Guinea-Bissau</td><td>Africa</td><td>Western Africa</td><td>1213000</td><td>1974</td><td>Guin&#233;-Bissau</td><td>927</td><td>Kumba Ial&#225;</td><td>36125</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GNQ</td><td class="Wrap" style="width:150px;">Equatorial Guinea</td><td>Africa</td><td>Central Africa</td><td>453000</td><td>1968</td><td>Guinea Ecuatorial</td><td>2972</td><td>Teodoro Obiang Nguema Mbasogo</td><td>28051</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GRC</td><td class="Wrap" style="width:150px;">Greece</td><td>Europe</td><td>Southern Europe</td><td>10545700</td><td>1830</td><td>Ell&#225;da</td><td>2401</td><td>Kostis Stefanopoulos</td><td>131626</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GRD</td><td class="Wrap" style="width:150px;">Grenada</td><td>North America</td><td>Caribbean</td><td>94000</td><td>1974</td><td>Grenada</td><td>916</td><td>Elisabeth II</td><td>344</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GRL</td><td class="Wrap" style="width:150px;">Greenland</td><td>North America</td><td>North America</td><td>56000</td><td>&nbsp;</td><td>Kalaallit Nunaat/Gr&#248;nland</td><td>917</td><td>Margrethe II</td><td>2166090</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GTM</td><td class="Wrap" style="width:150px;">Guatemala</td><td>North America</td><td>Central America</td><td>11385000</td><td>1821</td><td>Guatemala</td><td>922</td><td>Alfonso Portillo Cabrera</td><td>108889</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GUF</td><td class="Wrap" style="width:150px;">French Guiana</td><td>South America</td><td>South America</td><td>181000</td><td>&nbsp;</td><td>Guyane fran&#231;aise</td><td>3014</td><td>Jacques Chirac</td><td>90000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GUM</td><td class="Wrap" style="width:150px;">Guam</td><td>Oceania</td><td>Micronesia</td><td>168000</td><td>&nbsp;</td><td>Guam</td><td>921</td><td>George W. Bush</td><td>549</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>GUY</td><td class="Wrap" style="width:150px;">Guyana</td><td>South America</td><td>South America</td><td>861000</td><td>1966</td><td>Guyana</td><td>928</td><td>Bharrat Jagdeo</td><td>214969</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>HKG</td><td class="Wrap" style="width:150px;">Hong Kong</td><td>Asia</td><td>Eastern Asia</td><td>6782000</td><td>&nbsp;</td><td>Xianggang/Hong Kong</td><td>937</td><td>Jiang Zemin</td><td>1075</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>HMD</td><td class="Wrap" style="width:150px;">Heard Island and McDonald Islands</td><td>Antarctica</td><td>Antarctica</td><td>0</td><td>&nbsp;</td><td>Heard and McDonald Islands</td><td>&nbsp;</td><td>Elisabeth II</td><td>359</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>HND</td><td class="Wrap" style="width:150px;">Honduras</td><td>North America</td><td>Central America</td><td>6485000</td><td>1838</td><td>Honduras</td><td>933</td><td>Carlos Roberto Flores Facuss&#233;</td><td>112088</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>HRV</td><td class="Wrap" style="width:150px;">Croatia</td><td>Europe</td><td>Southern Europe</td><td>4473000</td><td>1991</td><td>Hrvatska</td><td>2409</td><td>Štipe Mesic</td><td>56538</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>HTI</td><td class="Wrap" style="width:150px;">Haiti</td><td>North America</td><td>Caribbean</td><td>8222000</td><td>1804</td><td>Ha&#239;ti/Dayti</td><td>929</td><td>Jean-Bertrand Aristide</td><td>27750</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>HUN</td><td class="Wrap" style="width:150px;">Hungary</td><td>Europe</td><td>Eastern Europe</td><td>10043200</td><td>1918</td><td>Magyarorsz&#225;g</td><td>3483</td><td>Ferenc M&#225;dl</td><td>93030</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>IDN</td><td class="Wrap" style="width:150px;">Indonesia</td><td>Asia</td><td>Southeast Asia</td><td>212107000</td><td>1945</td><td>Indonesia</td><td>939</td><td>Abdurrahman Wahid</td><td>1904569</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>IND</td><td class="Wrap" style="width:150px;">India</td><td>Asia</td><td>Southern and Central Asia</td><td>1013662000</td><td>1947</td><td>Bharat/India</td><td>1109</td><td>Kocheril Raman Narayanan</td><td>3287263</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>IOT</td><td class="Wrap" style="width:150px;">British Indian Ocean Territory</td><td>Africa</td><td>Eastern Africa</td><td>0</td><td>&nbsp;</td><td>British Indian Ocean Territory</td><td>&nbsp;</td><td>Elisabeth II</td><td>78</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>IRL</td><td class="Wrap" style="width:150px;">Ireland</td><td>Europe</td><td>British Islands</td><td>3775100</td><td>1921</td><td>Ireland/&#201;ire</td><td>1447</td><td>Mary McAleese</td><td>70273</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>IRN</td><td class="Wrap" style="width:150px;">Iran</td><td>Asia</td><td>Southern and Central Asia</td><td>67702000</td><td>1906</td><td>Iran</td><td>1380</td><td>Ali Mohammad Khatami-Ardakani</td><td>1648195</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>IRQ</td><td class="Wrap" style="width:150px;">Iraq</td><td>Asia</td><td>Middle East</td><td>23115000</td><td>1932</td><td>Al-&#180;Iraq</td><td>1365</td><td>Saddam Hussein al-Takriti</td><td>438317</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ISL</td><td class="Wrap" style="width:150px;">Iceland</td><td>Europe</td><td>Nordic Countries</td><td>279000</td><td>1944</td><td>&#205;sland</td><td>1449</td><td>&#211;lafur Ragnar Gr&#237;msson</td><td>103000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ISR</td><td class="Wrap" style="width:150px;">Israel</td><td>Asia</td><td>Middle East</td><td>6217000</td><td>1948</td><td>Yisra’el/Isra’il</td><td>1450</td><td>Moshe Katzav</td><td>21056</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ITA</td><td class="Wrap" style="width:150px;">Italy</td><td>Europe</td><td>Southern Europe</td><td>57680000</td><td>1861</td><td>Italia</td><td>1464</td><td>Carlo Azeglio Ciampi</td><td>301316</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>JAM</td><td class="Wrap" style="width:150px;">Jamaica</td><td>North America</td><td>Caribbean</td><td>2583000</td><td>1962</td><td>Jamaica</td><td>1530</td><td>Elisabeth II</td><td>10990</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>JOR</td><td class="Wrap" style="width:150px;">Jordan</td><td>Asia</td><td>Middle East</td><td>5083000</td><td>1946</td><td>Al-Urdunn</td><td>1786</td><td>Abdullah II</td><td>88946</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>JPN</td><td class="Wrap" style="width:150px;">Japan</td><td>Asia</td><td>Eastern Asia</td><td>126714000</td><td>-660</td><td>Nihon/Nippon</td><td>1532</td><td>Akihito</td><td>377829</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KAZ</td><td class="Wrap" style="width:150px;">Kazakstan</td><td>Asia</td><td>Southern and Central Asia</td><td>16223000</td><td>1991</td><td>Qazaqstan</td><td>1864</td><td>Nursultan Nazarbajev</td><td>2724900</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KEN</td><td class="Wrap" style="width:150px;">Kenya</td><td>Africa</td><td>Eastern Africa</td><td>30080000</td><td>1963</td><td>Kenya</td><td>1881</td><td>Daniel arap Moi</td><td>580367</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KGZ</td><td class="Wrap" style="width:150px;">Kyrgyzstan</td><td>Asia</td><td>Southern and Central Asia</td><td>4699000</td><td>1991</td><td>Kyrgyzstan</td><td>2253</td><td>Askar Akajev</td><td>199900</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KHM</td><td class="Wrap" style="width:150px;">Cambodia</td><td>Asia</td><td>Southeast Asia</td><td>11168000</td><td>1953</td><td>K&#226;mpuch&#233;a</td><td>1800</td><td>Norodom Sihanouk</td><td>181035</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KIR</td><td class="Wrap" style="width:150px;">Kiribati</td><td>Oceania</td><td>Micronesia</td><td>83000</td><td>1979</td><td>Kiribati</td><td>2256</td><td>Teburoro Tito</td><td>726</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KNA</td><td class="Wrap" style="width:150px;">Saint Kitts and Nevis</td><td>North America</td><td>Caribbean</td><td>38000</td><td>1983</td><td>Saint Kitts and Nevis</td><td>3064</td><td>Elisabeth II</td><td>261</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KOR</td><td class="Wrap" style="width:150px;">South Korea</td><td>Asia</td><td>Eastern Asia</td><td>46844000</td><td>1948</td><td>Taehan Min’guk (Namhan)</td><td>2331</td><td>Kim Dae-jung</td><td>99434</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>KWT</td><td class="Wrap" style="width:150px;">Kuwait</td><td>Asia</td><td>Middle East</td><td>1972000</td><td>1961</td><td>Al-Kuwayt</td><td>2429</td><td>Jabir al-Ahmad al-Jabir al-Sabah</td><td>17818</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LAO</td><td class="Wrap" style="width:150px;">Laos</td><td>Asia</td><td>Southeast Asia</td><td>5433000</td><td>1953</td><td>Lao</td><td>2432</td><td>Khamtay Siphandone</td><td>236800</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LBN</td><td class="Wrap" style="width:150px;">Lebanon</td><td>Asia</td><td>Middle East</td><td>3282000</td><td>1941</td><td>Lubnan</td><td>2438</td><td>&#201;mile Lahoud</td><td>10400</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LBR</td><td class="Wrap" style="width:150px;">Liberia</td><td>Africa</td><td>Western Africa</td><td>3154000</td><td>1847</td><td>Liberia</td><td>2440</td><td>Charles Taylor</td><td>111369</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LBY</td><td class="Wrap" style="width:150px;">Libyan Arab Jamahiriya</td><td>Africa</td><td>Northern Africa</td><td>5605000</td><td>1951</td><td>Libiya</td><td>2441</td><td>Muammar al-Qadhafi</td><td>1759540</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LCA</td><td class="Wrap" style="width:150px;">Saint Lucia</td><td>North America</td><td>Caribbean</td><td>154000</td><td>1979</td><td>Saint Lucia</td><td>3065</td><td>Elisabeth II</td><td>622</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LIE</td><td class="Wrap" style="width:150px;">Liechtenstein</td><td>Europe</td><td>Western Europe</td><td>32300</td><td>1806</td><td>Liechtenstein</td><td>2446</td><td>Hans-Adam II</td><td>160</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LKA</td><td class="Wrap" style="width:150px;">Sri Lanka</td><td>Asia</td><td>Southern and Central Asia</td><td>18827000</td><td>1948</td><td>Sri Lanka/Ilankai</td><td>3217</td><td>Chandrika Kumaratunga</td><td>65610</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LSO</td><td class="Wrap" style="width:150px;">Lesotho</td><td>Africa</td><td>Southern Africa</td><td>2153000</td><td>1966</td><td>Lesotho</td><td>2437</td><td>Letsie III</td><td>30355</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LTU</td><td class="Wrap" style="width:150px;">Lithuania</td><td>Europe</td><td>Baltic Countries</td><td>3698500</td><td>1991</td><td>Lietuva</td><td>2447</td><td>Valdas Adamkus</td><td>65301</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LUX</td><td class="Wrap" style="width:150px;">Luxembourg</td><td>Europe</td><td>Western Europe</td><td>435700</td><td>1867</td><td>Luxembourg/L&#235;tzebuerg</td><td>2452</td><td>Henri</td><td>2586</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>LVA</td><td class="Wrap" style="width:150px;">Latvia</td><td>Europe</td><td>Baltic Countries</td><td>2424200</td><td>1991</td><td>Latvija</td><td>2434</td><td>Vaira Vike-Freiberga</td><td>64589</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MAC</td><td class="Wrap" style="width:150px;">Macao</td><td>Asia</td><td>Eastern Asia</td><td>473000</td><td>&nbsp;</td><td>Macau/Aomen</td><td>2454</td><td>Jiang Zemin</td><td>18</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MAR</td><td class="Wrap" style="width:150px;">Morocco</td><td>Africa</td><td>Northern Africa</td><td>28351000</td><td>1956</td><td>Al-Maghrib</td><td>2486</td><td>Mohammed VI</td><td>446550</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MCO</td><td class="Wrap" style="width:150px;">Monaco</td><td>Europe</td><td>Western Europe</td><td>34000</td><td>1861</td><td>Monaco</td><td>2695</td><td>Rainier III</td><td>1.5</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MDA</td><td class="Wrap" style="width:150px;">Moldova</td><td>Europe</td><td>Eastern Europe</td><td>4380000</td><td>1991</td><td>Moldova</td><td>2690</td><td>Vladimir Voronin</td><td>33851</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MDG</td><td class="Wrap" style="width:150px;">Madagascar</td><td>Africa</td><td>Eastern Africa</td><td>15942000</td><td>1960</td><td>Madagasikara/Madagascar</td><td>2455</td><td>Didier Ratsiraka</td><td>587041</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MDV</td><td class="Wrap" style="width:150px;">Maldives</td><td>Asia</td><td>Southern and Central Asia</td><td>286000</td><td>1965</td><td>Dhivehi Raajje/Maldives</td><td>2463</td><td>Maumoon Abdul Gayoom</td><td>298</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MEX</td><td class="Wrap" style="width:150px;">Mexico</td><td>North America</td><td>Central America</td><td>98881000</td><td>1810</td><td>M&#233;xico</td><td>2515</td><td>Vicente Fox Quesada</td><td>1958201</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MHL</td><td class="Wrap" style="width:150px;">Marshall Islands</td><td>Oceania</td><td>Micronesia</td><td>64000</td><td>1990</td><td>Marshall Islands/Majol</td><td>2507</td><td>Kessai Note</td><td>181</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MKD</td><td class="Wrap" style="width:150px;">Macedonia</td><td>Europe</td><td>Southern Europe</td><td>2024000</td><td>1991</td><td>Makedonija</td><td>2460</td><td>Boris Trajkovski</td><td>25713</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MLI</td><td class="Wrap" style="width:150px;">Mali</td><td>Africa</td><td>Western Africa</td><td>11234000</td><td>1960</td><td>Mali</td><td>2482</td><td>Alpha Oumar Konar&#233;</td><td>1240192</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MLT</td><td class="Wrap" style="width:150px;">Malta</td><td>Europe</td><td>Southern Europe</td><td>380200</td><td>1964</td><td>Malta</td><td>2484</td><td>Guido de Marco</td><td>316</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MMR</td><td class="Wrap" style="width:150px;">Myanmar</td><td>Asia</td><td>Southeast Asia</td><td>45611000</td><td>1948</td><td>Myanma Pye</td><td>2710</td><td>kenraali Than Shwe</td><td>676578</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MNG</td><td class="Wrap" style="width:150px;">Mongolia</td><td>Asia</td><td>Eastern Asia</td><td>2662000</td><td>1921</td><td>Mongol Uls</td><td>2696</td><td>Natsagiin Bagabandi</td><td>1566500</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MNP</td><td class="Wrap" style="width:150px;">Northern Mariana Islands</td><td>Oceania</td><td>Micronesia</td><td>78000</td><td>&nbsp;</td><td>Northern Mariana Islands</td><td>2913</td><td>George W. Bush</td><td>464</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MOZ</td><td class="Wrap" style="width:150px;">Mozambique</td><td>Africa</td><td>Eastern Africa</td><td>19680000</td><td>1975</td><td>Mo&#231;ambique</td><td>2698</td><td>Joaqu&#237;m A. Chissano</td><td>801590</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MRT</td><td class="Wrap" style="width:150px;">Mauritania</td><td>Africa</td><td>Western Africa</td><td>2670000</td><td>1960</td><td>Muritaniya/Mauritanie</td><td>2509</td><td>Maaouiya Ould Sid&#180;Ahmad Taya</td><td>1025520</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MSR</td><td class="Wrap" style="width:150px;">Montserrat</td><td>North America</td><td>Caribbean</td><td>11000</td><td>&nbsp;</td><td>Montserrat</td><td>2697</td><td>Elisabeth II</td><td>102</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MTQ</td><td class="Wrap" style="width:150px;">Martinique</td><td>North America</td><td>Caribbean</td><td>395000</td><td>&nbsp;</td><td>Martinique</td><td>2508</td><td>Jacques Chirac</td><td>1102</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MUS</td><td class="Wrap" style="width:150px;">Mauritius</td><td>Africa</td><td>Eastern Africa</td><td>1158000</td><td>1968</td><td>Mauritius</td><td>2511</td><td>Cassam Uteem</td><td>2040</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MWI</td><td class="Wrap" style="width:150px;">Malawi</td><td>Africa</td><td>Eastern Africa</td><td>10925000</td><td>1964</td><td>Malawi</td><td>2462</td><td>Bakili Muluzi</td><td>118484</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MYS</td><td class="Wrap" style="width:150px;">Malaysia</td><td>Asia</td><td>Southeast Asia</td><td>22244000</td><td>1957</td><td>Malaysia</td><td>2464</td><td>Salahuddin Abdul Aziz Shah Alhaj</td><td>329758</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>MYT</td><td class="Wrap" style="width:150px;">Mayotte</td><td>Africa</td><td>Eastern Africa</td><td>149000</td><td>&nbsp;</td><td>Mayotte</td><td>2514</td><td>Jacques Chirac</td><td>373</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NAM</td><td class="Wrap" style="width:150px;">Namibia</td><td>Africa</td><td>Southern Africa</td><td>1726000</td><td>1990</td><td>Namibia</td><td>2726</td><td>Sam Nujoma</td><td>824292</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NCL</td><td class="Wrap" style="width:150px;">New Caledonia</td><td>Oceania</td><td>Melanesia</td><td>214000</td><td>&nbsp;</td><td>Nouvelle-Cal&#233;donie</td><td>3493</td><td>Jacques Chirac</td><td>18575</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NER</td><td class="Wrap" style="width:150px;">Niger</td><td>Africa</td><td>Western Africa</td><td>10730000</td><td>1960</td><td>Niger</td><td>2738</td><td>Mamadou Tandja</td><td>1267000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NFK</td><td class="Wrap" style="width:150px;">Norfolk Island</td><td>Oceania</td><td>Australia and New Zealand</td><td>2000</td><td>&nbsp;</td><td>Norfolk Island</td><td>2806</td><td>Elisabeth II</td><td>36</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NGA</td><td class="Wrap" style="width:150px;">Nigeria</td><td>Africa</td><td>Western Africa</td><td>111506000</td><td>1960</td><td>Nigeria</td><td>2754</td><td>Olusegun Obasanjo</td><td>923768</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NIC</td><td class="Wrap" style="width:150px;">Nicaragua</td><td>North America</td><td>Central America</td><td>5074000</td><td>1838</td><td>Nicaragua</td><td>2734</td><td>Arnoldo Alem&#225;n Lacayo</td><td>130000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NIU</td><td class="Wrap" style="width:150px;">Niue</td><td>Oceania</td><td>Polynesia</td><td>2000</td><td>&nbsp;</td><td>Niue</td><td>2805</td><td>Elisabeth II</td><td>260</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NLD</td><td class="Wrap" style="width:150px;">Netherlands</td><td>Europe</td><td>Western Europe</td><td>15864000</td><td>1581</td><td>Nederland</td><td>5</td><td>Beatrix</td><td>41526</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NOR</td><td class="Wrap" style="width:150px;">Norway</td><td>Europe</td><td>Nordic Countries</td><td>4478500</td><td>1905</td><td>Norge</td><td>2807</td><td>Harald V</td><td>323877</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NPL</td><td class="Wrap" style="width:150px;">Nepal</td><td>Asia</td><td>Southern and Central Asia</td><td>23930000</td><td>1769</td><td>Nepal</td><td>2729</td><td>Gyanendra Bir Bikram</td><td>147181</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NRU</td><td class="Wrap" style="width:150px;">Nauru</td><td>Oceania</td><td>Micronesia</td><td>12000</td><td>1968</td><td>Naoero/Nauru</td><td>2728</td><td>Bernard Dowiyogo</td><td>21</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>NZL</td><td class="Wrap" style="width:150px;">New Zealand</td><td>Oceania</td><td>Australia and New Zealand</td><td>3862000</td><td>1907</td><td>New Zealand/Aotearoa</td><td>3499</td><td>Elisabeth II</td><td>270534</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>OMN</td><td class="Wrap" style="width:150px;">Oman</td><td>Asia</td><td>Middle East</td><td>2542000</td><td>1951</td><td>&#180;Uman</td><td>2821</td><td>Qabus ibn Sa&#180;id</td><td>309500</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PAK</td><td class="Wrap" style="width:150px;">Pakistan</td><td>Asia</td><td>Southern and Central Asia</td><td>156483000</td><td>1947</td><td>Pakistan</td><td>2831</td><td>Mohammad Rafiq Tarar</td><td>796095</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PAN</td><td class="Wrap" style="width:150px;">Panama</td><td>North America</td><td>Central America</td><td>2856000</td><td>1903</td><td>Panam&#225;</td><td>2882</td><td>Mireya Elisa Moscoso Rodr&#237;guez</td><td>75517</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PCN</td><td class="Wrap" style="width:150px;">Pitcairn</td><td>Oceania</td><td>Polynesia</td><td>50</td><td>&nbsp;</td><td>Pitcairn</td><td>2912</td><td>Elisabeth II</td><td>49</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PER</td><td class="Wrap" style="width:150px;">Peru</td><td>South America</td><td>South America</td><td>25662000</td><td>1821</td><td>Per&#250;/Piruw</td><td>2890</td><td>Valentin Paniagua Corazao</td><td>1285216</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PHL</td><td class="Wrap" style="width:150px;">Philippines</td><td>Asia</td><td>Southeast Asia</td><td>75967000</td><td>1946</td><td>Pilipinas</td><td>766</td><td>Gloria Macapagal-Arroyo</td><td>300000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PLW</td><td class="Wrap" style="width:150px;">Palau</td><td>Oceania</td><td>Micronesia</td><td>19000</td><td>1994</td><td>Belau/Palau</td><td>2881</td><td>Kuniwo Nakamura</td><td>459</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PNG</td><td class="Wrap" style="width:150px;">Papua New Guinea</td><td>Oceania</td><td>Melanesia</td><td>4807000</td><td>1975</td><td>Papua New Guinea/Papua Niugini</td><td>2884</td><td>Elisabeth II</td><td>462840</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>POL</td><td class="Wrap" style="width:150px;">Poland</td><td>Europe</td><td>Eastern Europe</td><td>38653600</td><td>1918</td><td>Polska</td><td>2928</td><td>Aleksander Kwasniewski</td><td>323250</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PRI</td><td class="Wrap" style="width:150px;">Puerto Rico</td><td>North America</td><td>Caribbean</td><td>3869000</td><td>&nbsp;</td><td>Puerto Rico</td><td>2919</td><td>George W. Bush</td><td>8875</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PRK</td><td class="Wrap" style="width:150px;">North Korea</td><td>Asia</td><td>Eastern Asia</td><td>24039000</td><td>1948</td><td>Choson Minjujuui In&#180;min Konghwaguk (Bukhan)</td><td>2318</td><td>Kim Jong-il</td><td>120538</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PRT</td><td class="Wrap" style="width:150px;">Portugal</td><td>Europe</td><td>Southern Europe</td><td>9997600</td><td>1143</td><td>Portugal</td><td>2914</td><td>Jorge Samp&#227;io</td><td>91982</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PRY</td><td class="Wrap" style="width:150px;">Paraguay</td><td>South America</td><td>South America</td><td>5496000</td><td>1811</td><td>Paraguay</td><td>2885</td><td>Luis &#193;ngel Gonz&#225;lez Macchi</td><td>406752</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PSE</td><td class="Wrap" style="width:150px;">Palestine</td><td>Asia</td><td>Middle East</td><td>3101000</td><td>&nbsp;</td><td>Filastin</td><td>4074</td><td>Yasser (Yasir) Arafat</td><td>6257</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>PYF</td><td class="Wrap" style="width:150px;">French Polynesia</td><td>Oceania</td><td>Polynesia</td><td>235000</td><td>&nbsp;</td><td>Polyn&#233;sie fran&#231;aise</td><td>3016</td><td>Jacques Chirac</td><td>4000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>QAT</td><td class="Wrap" style="width:150px;">Qatar</td><td>Asia</td><td>Middle East</td><td>599000</td><td>1971</td><td>Qatar</td><td>2973</td><td>Hamad ibn Khalifa al-Thani</td><td>11000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>REU</td><td class="Wrap" style="width:150px;">R&#233;union</td><td>Africa</td><td>Eastern Africa</td><td>699000</td><td>&nbsp;</td><td>R&#233;union</td><td>3017</td><td>Jacques Chirac</td><td>2510</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ROM</td><td class="Wrap" style="width:150px;">Romania</td><td>Europe</td><td>Eastern Europe</td><td>22455500</td><td>1878</td><td>Rom&#226;nia</td><td>3018</td><td>Ion Iliescu</td><td>238391</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>RUS</td><td class="Wrap" style="width:150px;">Russian Federation</td><td>Europe</td><td>Eastern Europe</td><td>146934000</td><td>1991</td><td>Rossija</td><td>3580</td><td>Vladimir Putin</td><td>1.70754E+07</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>RWA</td><td class="Wrap" style="width:150px;">Rwanda</td><td>Africa</td><td>Eastern Africa</td><td>7733000</td><td>1962</td><td>Rwanda/Urwanda</td><td>3047</td><td>Paul Kagame</td><td>26338</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SAU</td><td class="Wrap" style="width:150px;">Saudi Arabia</td><td>Asia</td><td>Middle East</td><td>21607000</td><td>1932</td><td>Al-&#180;Arabiya as-Sa&#180;udiya</td><td>3173</td><td>Fahd ibn Abdul-Aziz al-Sa&#180;ud</td><td>2149690</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SDN</td><td class="Wrap" style="width:150px;">Sudan</td><td>Africa</td><td>Northern Africa</td><td>29490000</td><td>1956</td><td>As-Sudan</td><td>3225</td><td>Omar Hassan Ahmad al-Bashir</td><td>2505813</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SEN</td><td class="Wrap" style="width:150px;">Senegal</td><td>Africa</td><td>Western Africa</td><td>9481000</td><td>1960</td><td>S&#233;n&#233;gal/Sounougal</td><td>3198</td><td>Abdoulaye Wade</td><td>196722</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SGP</td><td class="Wrap" style="width:150px;">Singapore</td><td>Asia</td><td>Southeast Asia</td><td>3567000</td><td>1965</td><td>Singapore/Singapura/Xinjiapo/Singapur</td><td>3208</td><td>Sellapan Rama Nathan</td><td>618</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SGS</td><td class="Wrap" style="width:150px;">South Georgia and the South Sandwich Islands</td><td>Antarctica</td><td>Antarctica</td><td>0</td><td>&nbsp;</td><td>South Georgia and the South Sandwich Islands</td><td>&nbsp;</td><td>Elisabeth II</td><td>3903</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SHN</td><td class="Wrap" style="width:150px;">Saint Helena</td><td>Africa</td><td>Western Africa</td><td>6000</td><td>&nbsp;</td><td>Saint Helena</td><td>3063</td><td>Elisabeth II</td><td>314</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SJM</td><td class="Wrap" style="width:150px;">Svalbard and Jan Mayen</td><td>Europe</td><td>Nordic Countries</td><td>3200</td><td>&nbsp;</td><td>Svalbard og Jan Mayen</td><td>938</td><td>Harald V</td><td>62422</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SLB</td><td class="Wrap" style="width:150px;">Solomon Islands</td><td>Oceania</td><td>Melanesia</td><td>444000</td><td>1978</td><td>Solomon Islands</td><td>3161</td><td>Elisabeth II</td><td>28896</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SLE</td><td class="Wrap" style="width:150px;">Sierra Leone</td><td>Africa</td><td>Western Africa</td><td>4854000</td><td>1961</td><td>Sierra Leone</td><td>3207</td><td>Ahmed Tejan Kabbah</td><td>71740</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SLV</td><td class="Wrap" style="width:150px;">El Salvador</td><td>North America</td><td>Central America</td><td>6276000</td><td>1841</td><td>El Salvador</td><td>645</td><td>Francisco Guillermo Flores P&#233;rez</td><td>21041</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SMR</td><td class="Wrap" style="width:150px;">San Marino</td><td>Europe</td><td>Southern Europe</td><td>27000</td><td>885</td><td>San Marino</td><td>3171</td><td>&nbsp;</td><td>61</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SOM</td><td class="Wrap" style="width:150px;">Somalia</td><td>Africa</td><td>Eastern Africa</td><td>10097000</td><td>1960</td><td>Soomaaliya</td><td>3214</td><td>Abdiqassim Salad Hassan</td><td>637657</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SPM</td><td class="Wrap" style="width:150px;">Saint Pierre and Miquelon</td><td>North America</td><td>North America</td><td>7000</td><td>&nbsp;</td><td>Saint-Pierre-et-Miquelon</td><td>3067</td><td>Jacques Chirac</td><td>242</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>STP</td><td class="Wrap" style="width:150px;">Sao Tome and Principe</td><td>Africa</td><td>Central Africa</td><td>147000</td><td>1975</td><td>S&#227;o Tom&#233; e Pr&#237;ncipe</td><td>3172</td><td>Miguel Trovoada</td><td>964</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SUR</td><td class="Wrap" style="width:150px;">Suriname</td><td>South America</td><td>South America</td><td>417000</td><td>1975</td><td>Suriname</td><td>3243</td><td>Ronald Venetiaan</td><td>163265</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SVK</td><td class="Wrap" style="width:150px;">Slovakia</td><td>Europe</td><td>Eastern Europe</td><td>5398700</td><td>1993</td><td>Slovensko</td><td>3209</td><td>Rudolf Schuster</td><td>49012</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SVN</td><td class="Wrap" style="width:150px;">Slovenia</td><td>Europe</td><td>Southern Europe</td><td>1987800</td><td>1991</td><td>Slovenija</td><td>3212</td><td>Milan Kucan</td><td>20256</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SWE</td><td class="Wrap" style="width:150px;">Sweden</td><td>Europe</td><td>Nordic Countries</td><td>8861400</td><td>836</td><td>Sverige</td><td>3048</td><td>Carl XVI Gustaf</td><td>449964</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SWZ</td><td class="Wrap" style="width:150px;">Swaziland</td><td>Africa</td><td>Southern Africa</td><td>1008000</td><td>1968</td><td>kaNgwane</td><td>3244</td><td>Mswati III</td><td>17364</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SYC</td><td class="Wrap" style="width:150px;">Seychelles</td><td>Africa</td><td>Eastern Africa</td><td>77000</td><td>1976</td><td>Sesel/Seychelles</td><td>3206</td><td>France-Albert Ren&#233;</td><td>455</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>SYR</td><td class="Wrap" style="width:150px;">Syria</td><td>Asia</td><td>Middle East</td><td>16125000</td><td>1941</td><td>Suriya</td><td>3250</td><td>Bashar al-Assad</td><td>185180</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TCA</td><td class="Wrap" style="width:150px;">Turks and Caicos Islands</td><td>North America</td><td>Caribbean</td><td>17000</td><td>&nbsp;</td><td>The Turks and Caicos Islands</td><td>3423</td><td>Elisabeth II</td><td>430</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TCD</td><td class="Wrap" style="width:150px;">Chad</td><td>Africa</td><td>Central Africa</td><td>7651000</td><td>1960</td><td>Tchad/Tshad</td><td>3337</td><td>Idriss D&#233;by</td><td>1284000</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TGO</td><td class="Wrap" style="width:150px;">Togo</td><td>Africa</td><td>Western Africa</td><td>4629000</td><td>1960</td><td>Togo</td><td>3332</td><td>Gnassingb&#233; Eyad&#233;ma</td><td>56785</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>THA</td><td class="Wrap" style="width:150px;">Thailand</td><td>Asia</td><td>Southeast Asia</td><td>61399000</td><td>1350</td><td>Prathet Thai</td><td>3320</td><td>Bhumibol Adulyadej</td><td>513115</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TJK</td><td class="Wrap" style="width:150px;">Tajikistan</td><td>Asia</td><td>Southern and Central Asia</td><td>6188000</td><td>1991</td><td>To&#231;ikiston</td><td>3261</td><td>Emomali Rahmonov</td><td>143100</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TKL</td><td class="Wrap" style="width:150px;">Tokelau</td><td>Oceania</td><td>Polynesia</td><td>2000</td><td>&nbsp;</td><td>Tokelau</td><td>3333</td><td>Elisabeth II</td><td>12</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TKM</td><td class="Wrap" style="width:150px;">Turkmenistan</td><td>Asia</td><td>Southern and Central Asia</td><td>4459000</td><td>1991</td><td>T&#252;rkmenostan</td><td>3419</td><td>Saparmurad Nijazov</td><td>488100</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TMP</td><td class="Wrap" style="width:150px;">East Timor</td><td>Asia</td><td>Southeast Asia</td><td>885000</td><td>&nbsp;</td><td>Timor Timur</td><td>1522</td><td>Jos&#233; Alexandre Gusm&#227;o</td><td>14874</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TON</td><td class="Wrap" style="width:150px;">Tonga</td><td>Oceania</td><td>Polynesia</td><td>99000</td><td>1970</td><td>Tonga</td><td>3334</td><td>Taufa&#39;ahau Tupou IV</td><td>650</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TTO</td><td class="Wrap" style="width:150px;">Trinidad and Tobago</td><td>North America</td><td>Caribbean</td><td>1295000</td><td>1962</td><td>Trinidad and Tobago</td><td>3336</td><td>Arthur N. R. Robinson</td><td>5130</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TUN</td><td class="Wrap" style="width:150px;">Tunisia</td><td>Africa</td><td>Northern Africa</td><td>9586000</td><td>1956</td><td>Tunis/Tunisie</td><td>3349</td><td>Zine al-Abidine Ben Ali</td><td>163610</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TUR</td><td class="Wrap" style="width:150px;">Turkey</td><td>Asia</td><td>Middle East</td><td>66591000</td><td>1923</td><td>T&#252;rkiye</td><td>3358</td><td>Ahmet Necdet Sezer</td><td>774815</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TUV</td><td class="Wrap" style="width:150px;">Tuvalu</td><td>Oceania</td><td>Polynesia</td><td>12000</td><td>1978</td><td>Tuvalu</td><td>3424</td><td>Elisabeth II</td><td>26</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TWN</td><td class="Wrap" style="width:150px;">Taiwan</td><td>Asia</td><td>Eastern Asia</td><td>22256000</td><td>1945</td><td>T’ai-wan</td><td>3263</td><td>Chen Shui-bian</td><td>36188</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>TZA</td><td class="Wrap" style="width:150px;">Tanzania</td><td>Africa</td><td>Eastern Africa</td><td>33517000</td><td>1961</td><td>Tanzania</td><td>3306</td><td>Benjamin William Mkapa</td><td>883749</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>UGA</td><td class="Wrap" style="width:150px;">Uganda</td><td>Africa</td><td>Eastern Africa</td><td>21778000</td><td>1962</td><td>Uganda</td><td>3425</td><td>Yoweri Museveni</td><td>241038</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>UKR</td><td class="Wrap" style="width:150px;">Ukraine</td><td>Europe</td><td>Eastern Europe</td><td>50456000</td><td>1991</td><td>Ukrajina</td><td>3426</td><td>Leonid Kutšma</td><td>603700</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>UMI</td><td class="Wrap" style="width:150px;">United States Minor Outlying Islands</td><td>Oceania</td><td>Micronesia/Caribbean</td><td>0</td><td>&nbsp;</td><td>United States Minor Outlying Islands</td><td>&nbsp;</td><td>George W. Bush</td><td>16</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>URY</td><td class="Wrap" style="width:150px;">Uruguay</td><td>South America</td><td>South America</td><td>3337000</td><td>1828</td><td>Uruguay</td><td>3492</td><td>Jorge Batlle Ib&#225;&#241;ez</td><td>175016</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>USA</td><td class="Wrap" style="width:150px;">United States</td><td>North America</td><td>North America</td><td>278357000</td><td>1776</td><td>United States</td><td>3813</td><td>George W. Bush</td><td>9363520</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>UZB</td><td class="Wrap" style="width:150px;">Uzbekistan</td><td>Asia</td><td>Southern and Central Asia</td><td>24318000</td><td>1991</td><td>Uzbekiston</td><td>3503</td><td>Islam Karimov</td><td>447400</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>VAT</td><td class="Wrap" style="width:150px;">Holy See (Vatican City State)</td><td>Europe</td><td>Southern Europe</td><td>1000</td><td>1929</td><td>Santa Sede/Citt&#224; del Vaticano</td><td>3538</td><td>Johannes Paavali II</td><td>0.4</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>VCT</td><td class="Wrap" style="width:150px;">Saint Vincent and the Grenadines</td><td>North America</td><td>Caribbean</td><td>114000</td><td>1979</td><td>Saint Vincent and the Grenadines</td><td>3066</td><td>Elisabeth II</td><td>388</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>VEN</td><td class="Wrap" style="width:150px;">Venezuela</td><td>South America</td><td>South America</td><td>24170000</td><td>1811</td><td>Venezuela</td><td>3539</td><td>Hugo Ch&#225;vez Fr&#237;as</td><td>912050</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>VGB</td><td class="Wrap" style="width:150px;">Virgin Islands, British</td><td>North America</td><td>Caribbean</td><td>21000</td><td>&nbsp;</td><td>British Virgin Islands</td><td>537</td><td>Elisabeth II</td><td>151</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>VIR</td><td class="Wrap" style="width:150px;">Virgin Islands, U.S.</td><td>North America</td><td>Caribbean</td><td>93000</td><td>&nbsp;</td><td>Virgin Islands of the United States</td><td>4067</td><td>George W. Bush</td><td>347</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>VNM</td><td class="Wrap" style="width:150px;">Vietnam</td><td>Asia</td><td>Southeast Asia</td><td>79832000</td><td>1945</td><td>Vi&#234;t Nam</td><td>3770</td><td>Tr&#226;n Duc Luong</td><td>331689</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>VUT</td><td class="Wrap" style="width:150px;">Vanuatu</td><td>Oceania</td><td>Melanesia</td><td>190000</td><td>1980</td><td>Vanuatu</td><td>3537</td><td>John Bani</td><td>12189</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>WLF</td><td class="Wrap" style="width:150px;">Wallis and Futuna</td><td>Oceania</td><td>Polynesia</td><td>15000</td><td>&nbsp;</td><td>Wallis-et-Futuna</td><td>3536</td><td>Jacques Chirac</td><td>200</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>WSM</td><td class="Wrap" style="width:150px;">Samoa</td><td>Oceania</td><td>Polynesia</td><td>180000</td><td>1962</td><td>Samoa</td><td>3169</td><td>Malietoa Tanumafili II</td><td>2831</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>YEM</td><td class="Wrap" style="width:150px;">Yemen</td><td>Asia</td><td>Middle East</td><td>18112000</td><td>1918</td><td>Al-Yaman</td><td>1780</td><td>Ali Abdallah Salih</td><td>527968</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>YUG</td><td class="Wrap" style="width:150px;">Yugoslavia</td><td>Europe</td><td>Southern Europe</td><td>10640000</td><td>1918</td><td>Jugoslavija</td><td>1792</td><td>Vojislav Koštunica</td><td>102173</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ZAF</td><td class="Wrap" style="width:150px;">South Africa</td><td>Africa</td><td>Southern Africa</td><td>40377000</td><td>1910</td><td>South Africa</td><td>716</td><td>Thabo Mbeki</td><td>1221037</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ZMB</td><td class="Wrap" style="width:150px;">Zambia</td><td>Africa</td><td>Eastern Africa</td><td>9169000</td><td>1964</td><td>Zambia</td><td>3162</td><td>Frederick Chiluba</td><td>752618</td>
+			</tr><tr class="GridviewScrollItem">
+				<td>ZWE</td><td class="Wrap" style="width:150px;">Zimbabwe</td><td>Africa</td><td>Eastern Africa</td><td>11669000</td><td>1980</td><td>Zimbabwe</td><td>4068</td><td>Robert G. Mugabe</td><td>390757</td>
+			</tr>
+		</table>
+		</div>
+    <script type="text/javascript">
+	    $(document).ready(function () {
+	        gridviewScroll();
+	    });
+	
+	    function gridviewScroll() {
+	        gridView1 = $('#GridView1').gridviewScroll({
+                width: 660,
+                height: 300,
+                startHorizontal:0,
+                wheelstep:10,
+                barhovercolor:"#3399FF",
+                barcolor: "#3399FF",
+				arrowsize: 30,
+                varrowtopimg: "Images/arrowvt.png",
+                varrowbottomimg: "Images/arrowvb.png",
+                harrowleftimg: "Images/arrowhl.png",
+                harrowrightimg: "Images/arrowhr.png",
+                headerrowcount: 1,
+                railsize: 16,
+                barsize: 12
+            });
+	    }
+	</script>
+</body>
+</html>
